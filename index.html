@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bakehouse — Premium Bakery & Cake Shop in Akola, Maharashtra</title>
+<meta name="description" content="The Bakehouse is a premium bakery & cake shop in Akola, Maharashtra. Freshly baked cakes, cheesecake pastries, brownies, cookies and more. Eggless options available. Order on WhatsApp.">
+<meta property="og:title" content="The Bakehouse — Baked With Love. Crafted To Delight.">
+<meta property="og:description" content="Premium cakes, cheesecakes, pastries & brownies in Akola. Order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fbf6ef;
+  --cream-2:#f6ede2;
+  --blush:#fbe7e0;
+  --peach:#fde9d9;
+  --brown:#3b2418;
+  --brown-2:#5a3a2a;
+  --muted:#8a6f60;
+  --amber:#d98a3a;
+  --amber-2:#c9752b;
+  --coral:#e2725b;
+  --gold:#c9a25f;
+  --white:#fff;
+  --shadow-sm:0 2px 10px rgba(59,36,24,.06);
+  --shadow:0 12px 40px rgba(59,36,24,.10);
+  --shadow-lg:0 30px 70px rgba(59,36,24,.16);
+  --radius:22px;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--brown);background:var(--cream);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+.container{width:min(1200px,92%);margin:0 auto}
+.section{padding:clamp(72px,9vw,120px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber-2);font-weight:600}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--amber)}
+.title{font-size:clamp(2.2rem,4.4vw,3.6rem);margin:14px 0 18px;color:var(--brown)}
+.title em{font-style:italic;font-weight:500;color:var(--coral)}
+.lead{color:var(--muted);font-size:1.05rem;max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.92rem;letter-spacing:.04em;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;white-space:nowrap}
+.btn:focus-visible{outline:3px solid rgba(217,138,58,.45);outline-offset:3px}
+.btn-primary{background:linear-gradient(135deg,var(--amber) 0%,var(--coral) 100%);color:#fff;box-shadow:0 10px 26px rgba(217,138,58,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(217,138,58,.4)}
+.btn-dark{background:var(--brown);color:#fff}
+.btn-dark:hover{background:var(--brown-2);transform:translateY(-2px)}
+.btn-outline{border:1.5px solid rgba(59,36,24,.2);color:var(--brown);background:rgba(255,255,255,.5)}
+.btn-outline:hover{border-color:var(--brown);background:#fff;transform:translateY(-2px)}
+.btn-wa{background:#2f9e5b;color:#fff;box-shadow:0 10px 26px rgba(47,158,91,.28)}
+.btn-wa:hover{background:#27884e;transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* Announcement */
+.topbar{background:var(--brown);color:#f3e3d3;font-size:.78rem;letter-spacing:.08em;text-align:center;padding:9px 16px}
+.topbar b{color:var(--gold);font-weight:600}
+
+/* Header */
+header{position:sticky;top:0;z-index:100;background:rgba(251,246,239,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(59,36,24,.06);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 8px 30px rgba(59,36,24,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--amber),var(--coral));display:grid;place-items:center;color:#fff;font-family:var(--serif);font-weight:700;font-size:1.3rem;box-shadow:0 8px 20px rgba(226,114,91,.3)}
+.logo-text{font-family:var(--serif);font-weight:700;letter-spacing:.14em;font-size:1.15rem;line-height:1}
+.logo-sub{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.28em;color:var(--muted);margin-top:4px;font-weight:500}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--brown-2);position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--coral);transition:width .3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.nav-cta .btn{padding:11px 20px;font-size:.82rem}
+.burger{display:none;width:44px;height:44px;border-radius:12px;place-items:center;border:1.5px solid rgba(59,36,24,.14)}
+.burger span{display:block;width:20px;height:2px;background:var(--brown);position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--brown);transition:.3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:200;background:var(--cream);padding:28px 6%;flex-direction:column}
+.mobile-menu.open{display:flex}
+.mobile-menu .close{align-self:flex-end;width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);font-size:1.4rem}
+.mobile-menu ul{list-style:none;margin-top:40px}
+.mobile-menu li a{display:block;font-family:var(--serif);font-size:2.2rem;padding:12px 0;border-bottom:1px solid rgba(59,36,24,.08)}
+.mobile-menu .mob-cta{margin-top:auto;display:grid;gap:12px;padding-bottom:20px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#fff7ef 0%,var(--cream) 45%,#fbe9de 100%)}
+.hero::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;right:-180px;top:-200px;background:radial-gradient(circle,rgba(253,190,140,.45),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;width:500px;height:500px;border-radius:50%;left:-200px;bottom:-240px;background:radial-gradient(circle,rgba(250,200,190,.45),transparent 65%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding:clamp(56px,7vw,96px) 0 clamp(60px,7vw,100px)}
+.hero h1{font-size:clamp(2.8rem,5.6vw,4.9rem);font-weight:600;margin:18px 0 22px;color:var(--brown)}
+.hero h1 em{font-style:italic;font-weight:500;background:linear-gradient(120deg,var(--amber-2),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:52ch;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.trust{display:flex;flex-wrap:wrap;gap:22px 34px;margin-top:44px;padding-top:30px;border-top:1px solid rgba(59,36,24,.1)}
+.trust-item{display:flex;align-items:center;gap:12px}
+.trust-ico{width:42px;height:42px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow-sm);color:var(--amber-2)}
+.trust-ico svg{width:20px;height:20px}
+.trust b{display:block;font-size:.95rem;font-weight:600;line-height:1.2}
+.trust small{color:var(--muted);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.hero-visual{position:relative}
+.hero-main{border-radius:32px 32px 32px 120px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/4.6;position:relative}
+.hero-main img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s ease}
+.hero-visual:hover .hero-main img{transform:scale(1.07)}
+.float-card{position:absolute;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:18px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;animation:floaty 6s ease-in-out infinite}
+.float-card.a{left:-30px;bottom:70px}
+.float-card.b{right:-24px;top:60px;animation-delay:-3s}
+.float-card .fc-ico{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--peach);color:var(--amber-2)}
+.float-card .fc-ico svg{width:22px;height:22px}
+.float-card b{display:block;font-family:var(--serif);font-size:1.15rem;line-height:1.1}
+.float-card small{color:var(--muted);font-size:.72rem;letter-spacing:.06em}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-thumbs{position:absolute;bottom:-26px;left:30px;display:flex;gap:10px}
+.hero-thumbs img{width:78px;height:78px;border-radius:18px;object-fit:cover;border:3px solid #fff;box-shadow:var(--shadow)}
+
+/* Marquee strip */
+.strip{background:var(--brown);color:#f5e6d6;padding:16px 0;overflow:hidden}
+.strip-track{display:flex;gap:60px;white-space:nowrap;animation:scroll 32s linear infinite;width:max-content}
+.strip-track span{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em;display:inline-flex;align-items:center;gap:60px}
+.strip-track span::after{content:"✦";color:var(--gold);font-size:.8rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-imgs{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about-imgs img{width:100%;border-radius:var(--radius);object-fit:cover;box-shadow:var(--shadow)}
+.about-imgs img:nth-child(1){aspect-ratio:3/4;grid-row:span 2}
+.about-imgs img:nth-child(2){aspect-ratio:1;margin-top:40px}
+.about-imgs img:nth-child(3){aspect-ratio:1}
+.about-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:118px;height:118px;border-radius:50%;background:var(--brown);color:#fff;display:grid;place-items:center;text-align:center;font-family:var(--serif);box-shadow:var(--shadow-lg);border:5px solid var(--cream)}
+.about-badge b{font-size:1.8rem;line-height:1;display:block}
+.about-badge small{font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:32px 0}
+.point{display:flex;gap:12px;align-items:flex-start}
+.point-ico{width:38px;height:38px;flex:none;border-radius:10px;background:var(--peach);color:var(--amber-2);display:grid;place-items:center}
+.point-ico svg{width:18px;height:18px}
+.point b{display:block;font-size:.95rem}
+.point span{font-size:.85rem;color:var(--muted)}
+.loc-pill{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:999px;padding:10px 18px 10px 12px;box-shadow:var(--shadow-sm);font-size:.9rem;color:var(--brown-2)}
+.loc-pill svg{width:18px;height:18px;color:var(--coral)}
+
+/* Menu */
+#menu{background:linear-gradient(180deg,var(--cream) 0%,#fdf1e8 100%)}
+.menu-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.menu-tools{display:flex;flex-direction:column;gap:18px;margin:38px 0 40px}
+.search{position:relative;max-width:460px;width:100%}
+.search input{width:100%;padding:16px 20px 16px 52px;border-radius:999px;border:1.5px solid rgba(59,36,24,.1);background:#fff;font:inherit;font-size:.95rem;color:var(--brown);box-shadow:var(--shadow-sm);transition:border-color .2s,box-shadow .2s}
+.search input:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 4px rgba(217,138,58,.15)}
+.search svg{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:19px;height:19px;color:var(--muted)}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 20px;border-radius:999px;border:1.5px solid rgba(59,36,24,.12);background:rgba(255,255,255,.6);font-size:.85rem;font-weight:500;color:var(--brown-2);transition:all .25s}
+.chip:hover{border-color:var(--brown);background:#fff}
+.chip.active{background:var(--brown);color:#fff;border-color:var(--brown)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .35s ease,box-shadow .35s ease;display:flex;flex-direction:column;position:relative;animation:pop .5s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.card-img{position:relative;aspect-ratio:1/0.85;overflow:hidden;background:var(--cream-2);cursor:pointer}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.card:hover .card-img img{transform:scale(1.07)}
+.badge{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.94);border-radius:999px;padding:6px 11px;font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#2f7d4a}
+.badge .dot{width:9px;height:9px;border-radius:2px;border:1.5px solid #2f7d4a;display:grid;place-items:center}
+.badge .dot::after{content:"";width:5px;height:5px;border-radius:50%;background:#2f7d4a}
+.tag{position:absolute;top:14px;right:14px;background:var(--brown);color:var(--gold);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 11px;border-radius:999px;font-weight:600}
+.quick{position:absolute;bottom:14px;right:14px;width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);transition:.3s;color:var(--brown)}
+.card:hover .quick{opacity:1;transform:none}
+.quick svg{width:18px;height:18px}
+.card-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.card-cat{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber-2);font-weight:600;margin-bottom:6px}
+.card h3{font-size:1.35rem;font-weight:600;line-height:1.2;cursor:pointer}
+.card h3:hover{color:var(--coral)}
+.card p{font-size:.86rem;color:var(--muted);margin:8px 0 16px;flex:1}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.price{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--brown)}
+.price small{font-family:var(--sans);font-size:.72rem;color:var(--muted);font-weight:400;display:block;letter-spacing:.05em;line-height:1}
+.add{padding:11px 18px;border-radius:999px;background:var(--brown);color:#fff;font-size:.82rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:.25s}
+.add:hover{background:linear-gradient(135deg,var(--amber),var(--coral))}
+.add svg{width:15px;height:15px}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);grid-column:1/-1}
+.empty h3{font-size:1.8rem;margin-bottom:8px;color:var(--brown)}
+.menu-note{margin-top:34px;text-align:center;color:var(--muted);font-size:.85rem}
+
+/* Reviews */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+.rev{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm);position:relative;transition:.35s}
+.rev:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.rev::before{content:"“";position:absolute;top:14px;right:24px;font-family:var(--serif);font-size:5rem;line-height:1;color:var(--peach)}
+.stars{color:var(--amber);letter-spacing:2px;font-size:.95rem}
+.rev p{margin:16px 0 20px;font-size:.95rem;color:var(--brown-2);font-style:italic;font-family:var(--serif);font-size:1.15rem;line-height:1.5}
+.rev-meta{display:flex;align-items:center;gap:12px;font-size:.8rem;color:var(--muted)}
+.rev-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--peach),var(--blush));display:grid;place-items:center;color:var(--amber-2);font-weight:700;font-family:var(--serif)}
+.rev-meta b{display:block;color:var(--brown);font-weight:600}
+.rating-box{display:flex;gap:34px;flex-wrap:wrap;align-items:center;background:#fff;border-radius:var(--radius);padding:28px 34px;box-shadow:var(--shadow-sm);margin-top:44px;justify-content:space-between}
+.rating-big{font-family:var(--serif);font-size:3.4rem;font-weight:700;line-height:1;display:flex;align-items:baseline;gap:8px}
+.rating-big small{font-family:var(--sans);font-size:.85rem;color:var(--muted);font-weight:400}
+
+/* Contact */
+#contact{background:linear-gradient(180deg,#fdf1e8 0%,var(--cream) 100%)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;margin-top:44px;align-items:stretch}
+.contact-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:22px}
+.c-item{display:flex;gap:16px;align-items:flex-start}
+.c-ico{width:46px;height:46px;flex:none;border-radius:14px;background:var(--peach);color:var(--amber-2);display:grid;place-items:center}
+.c-ico svg{width:20px;height:20px}
+.c-item b{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:3px}
+.c-item span{font-size:1rem;color:var(--brown)}
+.c-item a:hover{color:var(--coral)}
+.hours{display:grid;grid-template-columns:1fr auto;gap:6px 20px;font-size:.9rem;color:var(--brown-2)}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:420px;position:relative;background:var(--cream-2)}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;filter:saturate(.85) contrast(1.02)}
+
+/* CTA band */
+.cta-band{background:linear-gradient(135deg,#f6c7a2 0%,#f1a68c 50%,#f4b8b0 100%);border-radius:32px;padding:clamp(40px,6vw,70px);display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.cta-band::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.25)}
+.cta-band h2{font-size:clamp(1.9rem,3.4vw,2.8rem);color:var(--brown)}
+.cta-band p{color:var(--brown-2);margin-top:8px}
+
+/* Footer */
+footer{background:var(--brown);color:#e9d6c4;padding:70px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+.foot-grid h4{color:#fff;font-size:1.25rem;margin-bottom:18px;font-family:var(--serif)}
+.foot-grid ul{list-style:none;display:grid;gap:10px}
+.foot-grid a{font-size:.9rem;color:#cbb4a0;transition:.2s}
+.foot-grid a:hover{color:var(--gold)}
+.foot-grid p{font-size:.9rem;color:#cbb4a0;max-width:34ch;margin-top:12px}
+.foot-bottom{margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.8rem;color:#a68d78}
+.foot-logo .logo-text{color:#fff}
+.foot-logo .logo-sub{color:var(--gold)}
+
+/* Floating cart */
+.cart-fab{position:fixed;right:22px;bottom:22px;z-index:150;background:var(--brown);color:#fff;border-radius:999px;padding:14px 22px 14px 18px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow-lg);font-weight:600;font-size:.9rem;transform:translateY(120px);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.cart-fab.show{transform:none}
+.cart-fab .cnt{background:var(--coral);border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;font-size:.75rem;padding:0 7px}
+.cart-fab svg{width:20px;height:20px}
+.wa-fab{position:fixed;left:22px;bottom:22px;z-index:150;width:56px;height:56px;border-radius:50%;background:#2f9e5b;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(47,158,91,.4);transition:transform .3s}
+.wa-fab:hover{transform:scale(1.08)}
+.wa-fab svg{width:28px;height:28px}
+
+/* Drawer */
+.overlay{position:fixed;inset:0;background:rgba(40,22,12,.55);backdrop-filter:blur(4px);z-index:300;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--cream);z-index:310;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;box-shadow:var(--shadow-lg)}
+.drawer.open{transform:none}
+.drawer-head{padding:26px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(59,36,24,.08)}
+.drawer-head h3{font-size:1.7rem}
+.x{width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);display:grid;place-items:center;font-size:1.3rem;transition:.2s}
+.x:hover{background:var(--peach)}
+.drawer-body{flex:1;overflow-y:auto;padding:20px 28px;display:grid;gap:14px;align-content:start}
+.line{display:flex;gap:14px;align-items:center;background:#fff;border-radius:16px;padding:12px;box-shadow:var(--shadow-sm)}
+.line img{width:64px;height:64px;border-radius:12px;object-fit:cover}
+.line b{display:block;font-family:var(--serif);font-size:1.1rem;line-height:1.15}
+.line small{color:var(--muted)}
+.qty{display:inline-flex;align-items:center;border:1.5px solid rgba(59,36,24,.14);border-radius:999px;overflow:hidden}
+.qty button{width:34px;height:34px;font-size:1.1rem;transition:.2s}
+.qty button:hover{background:var(--peach)}
+.qty span{min-width:30px;text-align:center;font-weight:600;font-size:.9rem}
+.line .rm{margin-left:auto;color:var(--muted);font-size:.8rem;text-decoration:underline}
+.drawer-foot{padding:22px 28px 28px;border-top:1px solid rgba(59,36,24,.08);background:#fff}
+.total{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.total b{font-family:var(--serif);font-size:1.7rem}
+.drawer-foot .btn{width:100%}
+.drawer-foot small{display:block;text-align:center;color:var(--muted);font-size:.75rem;margin-top:12px}
+.drawer-empty{text-align:center;color:var(--muted);padding:60px 10px}
+.drawer-empty h4{font-size:1.5rem;color:var(--brown);margin-bottom:6px}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:320;display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-box{background:#fff;border-radius:28px;width:min(900px,100%);max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow-lg);transform:translateY(20px) scale(.98);transition:transform .4s cubic-bezier(.2,.7,.2,1);position:relative}
+.modal.open .modal-box{transform:none}
+.modal-img{position:relative;min-height:320px;background:var(--cream-2)}
+.modal-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.modal-content{padding:40px 38px}
+.modal-content .card-cat{margin-bottom:8px}
+.modal-content h3{font-size:2.1rem;line-height:1.1}
+.modal-content .price{font-size:1.9rem;margin:14px 0}
+.modal-content p{color:var(--muted);font-size:.95rem}
+.labels{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.lbl{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:var(--cream-2);color:var(--brown-2)}
+.lbl.veg{background:#e8f5ec;color:#2f7d4a}
+.lbl.egg{background:var(--peach);color:var(--amber-2)}
+.modal-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:22px}
+.modal-actions .btn{flex:1}
+.modal .x{position:absolute;top:16px;right:16px;z-index:2}
+.modal-note{margin-top:16px;font-size:.78rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+.modal-note svg{width:15px;height:15px;color:var(--amber-2);flex:none}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--brown);color:#fff;padding:13px 22px;border-radius:999px;font-size:.88rem;z-index:400;opacity:0;transition:.35s;box-shadow:var(--shadow-lg);display:flex;gap:10px;align-items:center;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast svg{width:16px;height:16px;color:#7fd39a}
+
+/* Responsive */
+@media (max-width:1024px){
+  .nav-links{gap:24px}
+  .hero-grid{gap:40px}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav-links,.nav-cta .btn-outline{display:none}
+  .burger{display:grid}
+  .hero-grid{grid-template-columns:1fr;padding-top:36px}
+  .hero-visual{order:-1}
+  .hero-main{aspect-ratio:4/3.4;border-radius:28px 28px 28px 90px}
+  .float-card.a{left:10px;bottom:-18px}
+  .float-card.b{right:10px;top:16px}
+  .hero-thumbs{display:none}
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .modal-box{grid-template-columns:1fr}
+  .modal-img{min-height:240px;aspect-ratio:4/3}
+  .modal-img img{position:relative}
+  .modal-content{padding:28px 24px}
+  .cta-band{text-align:center;justify-content:center}
+}
+@media (max-width:600px){
+  .nav{height:70px}
+  .nav-cta .btn-wa span{display:none}
+  .nav-cta .btn-wa{padding:11px 13px}
+  .rev-grid,.foot-grid{grid-template-columns:1fr}
+  .about-points{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr;gap:14px}
+  .card-body{padding:14px}
+  .card h3{font-size:1.1rem}
+  .card p{display:none}
+  .price{font-size:1.2rem}
+  .add{padding:9px 12px;font-size:.72rem}
+  .add span{display:none}
+  .card-foot{flex-wrap:wrap}
+  .trust{gap:18px}
+  .hero-actions .btn{flex:1;justify-content:center}
+  .cart-fab{right:14px;bottom:14px;padding:12px 18px 12px 16px}
+  .wa-fab{left:14px;bottom:14px;width:52px;height:52px}
+  .toast{white-space:normal;text-align:center;width:calc(100% - 40px)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar">Fresh bakes daily in Akola · <b>Eggless options available</b> · Custom celebration cakes on order</div>
+
+<header id="header">
+  <div class="container nav">
+    <a href="#home" class="logo" aria-label="The Bakehouse home">
+      <div class="logo-mark">B</div>
+      <div><span class="logo-text">THE BAKEHOUSE</span><span class="logo-sub">BAKERY &amp; CAKE SHOP · AKOLA</span></div>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#menu" class="btn btn-outline">View Menu</a>
+      <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+        <span>Order on WhatsApp</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <button class="close" id="mobClose" aria-label="Close menu">×</button>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mob-cta">
+    <a href="#menu" class="btn btn-dark">View Menu</a>
+    <a href="#" class="btn btn-wa wa-link" target="_blank" rel="noopener">Order on WhatsApp</a>
+  </div>
+</div>
+
+<main id="home">
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Premium Bakery · Akola, Maharashtra</span>
+      <h1 class="reveal d1">Baked With Love.<br><em>Crafted To Delight.</em></h1>
+      <p class="reveal d2">Freshly baked cakes, cheesecakes, pastries, brownies and more — thoughtfully crafted for every sweet moment.</p>
+      <div class="hero-actions reveal d3">
+        <a href="#menu" class="btn btn-primary">EXPLORE MENU
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#" class="btn btn-dark wa-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+          ORDER ON WHATSAPP</a>
+      </div>
+      <div class="trust reveal d4">
+        <div class="trust-item"><div class="trust-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.2 21 12 17.4 5.8 21l1.4-6.8L2 9.4l7-.8z"/></svg></div><div><b>4.8 Rated</b><small>Google rating</small></div></div>
+        <div class="trust-item"><div class="trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12z"/></svg></div><div><b>30+ Reviews</b><small>Happy customers</small></div></div>
+        <div class="trust-item"><div class="trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b>Freshly Made</b><small>Baked daily</small></div></div>
+        <div class="trust-item"><div class="trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c4 4 7 7.5 7 11a7 7 0 0 1-14 0c0-3.5 3-7 7-11z"/></svg></div><div><b>Eggless Options</b><small>Pure veg bakes</small></div></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="hero-main">
+        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1000&q=80" alt="Assorted premium desserts displayed at The Bakehouse" data-name="Assorted Desserts" fetchpriority="high">
+      </div>
+      <div class="float-card a">
+        <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11h16v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7zM4 11c0-2 1.5-3 4-3 1 0 2 .5 4 .5s3-.5 4-.5c2.5 0 4 1 4 3M12 3v3"/></svg></div>
+        <div><b>Cheesecake Pastries</b><small>Our signature bestseller</small></div>
+      </div>
+      <div class="float-card b">
+        <div class="fc-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.6 7 .8-5.2 4.8L18.2 21 12 17.4 5.8 21l1.4-6.8L2 9.4l7-.8z"/></svg></div>
+        <div><b>4.8 / 5</b><small>Loved in Akola</small></div>
+      </div>
+      <div class="hero-thumbs">
+        <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=200&q=80" alt="Blueberry cheesecake" data-name="Blueberry">
+        <img src="https://images.unsplash.com/photo-1607920591413-4ec007e70023?auto=format&fit=crop&w=200&q=80" alt="Brownies" data-name="Brownie">
+        <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=200&q=80" alt="Red velvet cake" data-name="Red Velvet">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Cheesecake Pastries</span><span>Celebration Cakes</span><span>Fudge Brownies</span><span>Eggless Bakes</span><span>Fresh Cookies</span><span>Made Daily in Akola</span>
+    <span>Cheesecake Pastries</span><span>Celebration Cakes</span><span>Fudge Brownies</span><span>Eggless Bakes</span><span>Fresh Cookies</span><span>Made Daily in Akola</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-imgs reveal">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Layered chocolate cake slice" data-name="Chocolate Cake">
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" alt="Freshly baked croissants" data-name="Croissants">
+      <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80" alt="Chocolate chip cookies" data-name="Cookies">
+      <div class="about-badge"><b>100%</b><small>Fresh Daily</small></div>
+    </div>
+    <div>
+      <span class="eyebrow reveal">Our Story</span>
+      <h2 class="title reveal d1">A little bakehouse with <em>big-hearted</em> baking</h2>
+      <p class="lead reveal d2">The Bakehouse is a premium bakery and cake shop in Akola, Maharashtra, known for its indulgent cheesecake pastries, rich brownies, celebration cakes and freshly baked treats. Every item is made in small batches using quality ingredients — real cream cheese, Belgian chocolate, fresh fruit and slow-baked bases — so each bite tastes as beautiful as it looks.</p>
+      <div class="about-points">
+        <div class="point reveal d1"><div class="point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c4 4 7 7.5 7 11a7 7 0 0 1-14 0c0-3.5 3-7 7-11z"/></svg></div><div><b>Eggless &amp; Veg Friendly</b><span>Most of our range is pure vegetarian and eggless.</span></div></div>
+        <div class="point reveal d2"><div class="point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b>Baked Fresh Every Morning</b><span>No day-old stock. What you see is baked today.</span></div></div>
+        <div class="point reveal d3"><div class="point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8-4-8 4v10l8 4 8-4V7zM4 7l8 4 8-4M12 11v10"/></svg></div><div><b>Custom Celebration Cakes</b><span>Birthdays, anniversaries &amp; special occasions.</span></div></div>
+        <div class="point reveal d4"><div class="point-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.2L4 21l1.8-5.4A8 8 0 1 1 21 12z"/></svg></div><div><b>Easy WhatsApp Ordering</b><span>Pick your treats, send your order, pick up or get it delivered.</span></div></div>
+      </div>
+      <a href="#contact" class="loc-pill reveal d3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>The Bakehouse, Akola, Maharashtra 444001 — <b>&nbsp;Get Directions</b></a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="section" id="menu">
+  <div class="container">
+    <div class="menu-head">
+      <div>
+        <span class="eyebrow reveal">Our Menu</span>
+        <h2 class="title reveal d1">Freshly baked, <em>beautifully</em> finished</h2>
+        <p class="lead reveal d2">Browse our signature cheesecake pastries, celebration cakes, brownies and cookies. Tap any item to view details and add it to your WhatsApp order.</p>
+      </div>
+    </div>
+    <div class="menu-tools reveal">
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="search" placeholder="Search cheesecake, brownie, red velvet…" aria-label="Search menu">
+      </label>
+      <div class="filters" id="filters" role="tablist" aria-label="Menu categories"></div>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <p class="menu-note">Prices are inclusive of taxes · Pastries are single-serve slices · Full cakes available in 500g, 1kg &amp; custom sizes on request.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <span class="eyebrow reveal">Customer Love</span>
+    <h2 class="title reveal d1">What Akola is <em>saying</em></h2>
+    <p class="lead reveal d2">A few words from customers who have shared their experience with us.</p>
+    <div class="rev-grid">
+      <article class="rev reveal d1"><div class="stars" aria-label="5 stars">★★★★★</div><p>Ordered the Biscoff cheesecake pastry for a small get-together and everyone kept asking where it was from. Creamy, not overly sweet, and the Biscoff crumble on top was perfect.</p><div class="rev-meta"><div class="rev-av">B</div><div><b>Bakehouse Customer</b>Google review · Biscoff Cheesecake Pastry</div></div></article>
+      <article class="rev reveal d2"><div class="stars" aria-label="5 stars">★★★★★</div><p>Finally a bakery in Akola with proper eggless options that actually taste premium. The walnut brownie is dense and fudgy, exactly how a brownie should be.</p><div class="rev-meta"><div class="rev-av">B</div><div><b>Bakehouse Customer</b>Google review · Brownies</div></div></article>
+      <article class="rev reveal d3"><div class="stars" aria-label="5 stars">★★★★★</div><p>Got a 1kg red velvet cake for my mother's birthday. Beautifully finished, fresh cream cheese frosting and the WhatsApp ordering was quick and hassle-free.</p><div class="rev-meta"><div class="rev-av">B</div><div><b>Bakehouse Customer</b>Google review · Red Velvet Cake</div></div></article>
+      <article class="rev reveal d1"><div class="stars" aria-label="4 stars">★★★★☆</div><p>The blueberry cheesecake pastry is lovely and the packaging is neat. Would love to see more flavours added, but what they have is consistently good.</p><div class="rev-meta"><div class="rev-av">B</div><div><b>Bakehouse Customer</b>Google review · Cheesecake Pastries</div></div></article>
+      <article class="rev reveal d2"><div class="stars" aria-label="5 stars">★★★★★</div><p>Nutella cheesecake pastry is worth every rupee. Rich, smooth and the base has a nice crunch. My go-to dessert spot in Akola now.</p><div class="rev-meta"><div class="rev-av">B</div><div><b>Bakehouse Customer</b>Google review · Nutella Cheesecake Pastry</div></div></article>
+      <article class="rev reveal d3"><div class="stars" aria-label="5 stars">★★★★★</div><p>Cookies were still slightly warm when I picked them up. Chocolate chunks in every bite. Staff was polite and the shop feels clean and premium.</p><div class="rev-meta"><div class="rev-av">B</div><div><b>Bakehouse Customer</b>Google review · Cookies</div></div></article>
+    </div>
+    <div class="rating-box reveal">
+      <div class="rating-big">4.8 <small>/ 5 · based on 30+ Google reviews</small></div>
+      <div class="stars" style="font-size:1.4rem">★★★★★</div>
+      <a href="#" class="btn btn-outline" id="reviewLink" target="_blank" rel="noopener">Read all reviews on Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <span class="eyebrow reveal">Visit Us</span>
+    <h2 class="title reveal d1">Come say hello, <em>or order from home</em></h2>
+    <p class="lead reveal d2">Walk in for a fresh slice, or send your order on WhatsApp and we'll have it ready for pickup or delivery within Akola.</p>
+    <div class="contact-grid">
+      <div class="contact-card reveal d1">
+        <div class="c-item"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div><div><b>Location</b><span>The Bakehouse — Bakery &amp; Cake Shop<br>Akola, Maharashtra 444001</span></div></div>
+        <div class="c-item"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><b>Phone</b><span><a href="tel:+919876543210" id="phoneLink">+91 98765 43210</a></span></div></div>
+        <div class="c-item"><div class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg></div><div><b>WhatsApp</b><span><a href="#" class="wa-link" target="_blank" rel="noopener" id="waText">+91 98765 43210</a></span></div></div>
+        <div class="c-item"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><b>Opening Hours</b><div class="hours" style="margin-top:6px"><span>Monday – Saturday</span><span>10:00 AM – 10:00 PM</span><span>Sunday</span><span>11:00 AM – 10:00 PM</span></div></div></div>
+        <div class="contact-actions">
+          <a href="tel:+919876543210" class="btn btn-dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call Now</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=The+Bakehouse+Bakery+Akola+Maharashtra" class="btn btn-primary" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Get Directions</a>
+        </div>
+      </div>
+      <div class="map reveal d2">
+        <iframe title="The Bakehouse location map, Akola" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=The+Bakehouse+Bakery+Akola+Maharashtra&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding-bottom:clamp(72px,9vw,120px)">
+  <div class="cta-band reveal">
+    <div><h2>Planning a celebration?</h2><p>Custom cakes, dessert boxes and party pastries — message us with your date and we'll take care of the sweet part.</p></div>
+    <a href="#" class="btn btn-dark wa-link" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="logo foot-logo"><div class="logo-mark">B</div><div><span class="logo-text">THE BAKEHOUSE</span><span class="logo-sub">BAKERY &amp; CAKE SHOP · AKOLA</span></div></div>
+        <p>Premium cakes, cheesecake pastries, brownies and freshly baked treats — handcrafted daily in Akola, Maharashtra.</p>
+      </div>
+      <div><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#menu">Menu</a></li><li><a href="#about">About</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Menu</h4><ul><li><a href="#menu" data-cat="Cheesecake Pastries">Cheesecake Pastries</a></li><li><a href="#menu" data-cat="Cakes">Celebration Cakes</a></li><li><a href="#menu" data-cat="Pastries">Pastries</a></li><li><a href="#menu" data-cat="Brownies">Brownies</a></li><li><a href="#menu" data-cat="Cookies & Bakes">Cookies &amp; Bakes</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="#contact">Akola, Maharashtra 444001</a></li><li><a href="tel:+919876543210">+91 98765 43210</a></li><li><a href="#" class="wa-link" target="_blank" rel="noopener">WhatsApp Us</a></li><li><a href="#contact">Mon–Sat 10 AM – 10 PM · Sun 11 AM – 10 PM</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> The Bakehouse, Akola. All rights reserved.</span>
+      <span>Baked with love in Akola, Maharashtra 🤍</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating -->
+<a href="#" class="wa-fab wa-link" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+</a>
+<button class="cart-fab" id="cartFab" aria-label="Open your order">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l1 13H5L6 7zM9 7a3 3 0 0 1 6 0"/></svg>
+  Your Order <span class="cnt" id="cartCount">0</span>
+</button>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- Drawer -->
+<aside class="drawer" id="drawer" aria-label="Your order" aria-hidden="true">
+  <div class="drawer-head"><h3>Your Order</h3><button class="x" id="drawerClose" aria-label="Close order">×</button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot">
+    <div class="total"><span style="color:var(--muted)">Estimated total</span><b id="total">₹0</b></div>
+    <button class="btn btn-wa" id="checkout">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+      Send Order on WhatsApp</button>
+    <small>We'll confirm availability, pickup/delivery time and payment on WhatsApp.</small>
+  </div>
+</aside>
+
+<!-- Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" aria-hidden="true">
+  <div class="modal-box">
+    <button class="x" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-img"><img id="mImg" src="" alt=""></div>
+    <div class="modal-content">
+      <div class="card-cat" id="mCat"></div>
+      <h3 id="mTitle"></h3>
+      <div class="price" id="mPrice"></div>
+      <p id="mDesc"></p>
+      <div class="labels" id="mLabels"></div>
+      <div class="modal-actions">
+        <div class="qty"><button id="qMinus" aria-label="Decrease quantity">−</button><span id="qVal">1</span><button id="qPlus" aria-label="Increase quantity">+</button></div>
+        <button class="btn btn-primary" id="mAdd">Add to Order</button>
+      </div>
+      <div class="modal-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>Orders are placed via WhatsApp — no online payment needed.</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5L20 7"/></svg><span id="toastText"></span></div>
+
+<script>
+/* ---------- CONFIG ---------- */
+const WA_NUMBER = "919876543210"; // Replace with the bakery's WhatsApp number (country code, no +)
+const BRAND = "The Bakehouse, Akola";
+
+/* ---------- MENU DATA ---------- */
+const U = (id,w=800)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+const MENU = [
+  // Cheesecake Pastries
+  {id:1, name:"Biscoff Cheesecake Pastry", cat:"Cheesecake Pastries", price:319, veg:true, eggless:true, tag:"Bestseller",
+   desc:"Velvety baked cheesecake on a buttery Biscoff biscuit base, finished with a silky Lotus Biscoff spread and caramelised biscuit crumble.",
+   img:U("photo-1567171466295-4afa63d45416")},
+  {id:2, name:"Blueberry Cheesecake Pastry", cat:"Cheesecake Pastries", price:297, veg:true, eggless:true,
+   desc:"Creamy New York-style cheesecake slice crowned with a glossy blueberry compote and fresh blueberries on a graham-crumb base.",
+   img:U("photo-1524351199678-941a58a3df50")},
+  {id:3, name:"Nutella Cheesecake Pastry", cat:"Cheesecake Pastries", price:308, veg:true, eggless:true, tag:"Popular",
+   desc:"Rich hazelnut-chocolate cheesecake swirled with Nutella, topped with a smooth Nutella glaze and roasted hazelnut pieces.",
+   img:U("photo-1606313564200-e75d5e30476c")},
+  {id:4, name:"Strawberry Cheesecake Pastry", cat:"Cheesecake Pastries", price:286, veg:true, eggless:true,
+   desc:"Light, creamy cheesecake layered with fresh strawberry coulis and topped with sliced strawberries for a bright, fruity finish.",
+   img:U("photo-1565958011703-44f9829ba187")},
+  {id:5, name:"Classic New York Cheesecake", cat:"Cheesecake Pastries", price:275, veg:true, eggless:true,
+   desc:"Dense, ultra-smooth vanilla cheesecake with a golden baked top, served plain with a delicate berry drizzle on the side.",
+   img:U("photo-1533134242443-d4fd215305ad")},
+
+  // Cakes
+  {id:6, name:"Belgian Chocolate Truffle Cake", cat:"Cakes", price:899, veg:true, eggless:true, tag:"Signature", unit:"500 g",
+   desc:"Moist dark chocolate sponge layered with Belgian chocolate truffle ganache and finished with a mirror-smooth chocolate glaze.",
+   img:U("photo-1578985545062-69928b1d9587")},
+  {id:7, name:"Red Velvet Cake", cat:"Cakes", price:849, veg:true, eggless:true, unit:"500 g",
+   desc:"Classic crimson velvet layers with a hint of cocoa, frosted generously with tangy cream cheese frosting and red velvet crumbs.",
+   img:U("photo-1586788680434-30d324b2d46f")},
+  {id:8, name:"Fresh Fruit Cake", cat:"Cakes", price:799, veg:true, eggless:true, unit:"500 g",
+   desc:"Airy vanilla sponge with whipped cream and layers of seasonal fresh fruit — strawberries, kiwi, berries and more.",
+   img:U("photo-1464349095431-e9a21285b5f3")},
+  {id:9, name:"Black Forest Cake", cat:"Cakes", price:749, veg:true, eggless:true, unit:"500 g",
+   desc:"Chocolate sponge soaked in cherry syrup, layered with whipped cream, dark chocolate shavings and glazed cherries.",
+   img:U("photo-1571115177098-24ec42ed204d")},
+  {id:10, name:"Chocolate Berry Cake", cat:"Cakes", price:949, veg:true, eggless:true, unit:"500 g",
+   desc:"Decadent chocolate layers with dark ganache, topped with an abundance of fresh raspberries, blueberries and strawberries.",
+   img:U("photo-1563729784474-d77dbb933a9e")},
+
+  // Pastries
+  {id:11, name:"Chocolate Truffle Pastry", cat:"Pastries", price:149, veg:true, eggless:true,
+   desc:"A single indulgent slice of our chocolate truffle cake — rich cocoa sponge with smooth dark chocolate ganache.",
+   img:U("photo-1602351447937-745cb720612f")},
+  {id:12, name:"Tiramisu Pastry", cat:"Pastries", price:229, veg:true, eggless:false,
+   desc:"Espresso-soaked sponge layered with mascarpone cream and dusted with cocoa — a classic Italian favourite, made in-house.",
+   img:U("photo-1571877227200-a0d98ea607e9")},
+  {id:13, name:"Red Velvet Pastry", cat:"Pastries", price:159, veg:true, eggless:true,
+   desc:"Slice of our beloved red velvet with tangy cream cheese frosting — soft, moist and perfectly balanced.",
+   img:U("photo-1616541823729-00fe0aacd32c")},
+  {id:14, name:"Butter Croissant", cat:"Pastries", price:99, veg:true, eggless:true,
+   desc:"Golden, flaky, laminated croissant with 27 buttery layers. Baked fresh every morning and best enjoyed warm.",
+   img:U("photo-1555507036-ab1f4038808a")},
+
+  // Brownies
+  {id:15, name:"Classic Fudge Brownie", cat:"Brownies", price:129, veg:true, eggless:true, tag:"Popular",
+   desc:"Dense, gooey dark chocolate brownie with a crackly top and an intensely fudgy centre. Pure chocolate comfort.",
+   img:U("photo-1607920591413-4ec007e70023")},
+  {id:16, name:"Walnut Brownie", cat:"Brownies", price:149, veg:true, eggless:true,
+   desc:"Our signature fudge brownie studded with toasted California walnuts for a nutty crunch in every bite.",
+   img:U("photo-1606312619070-d48b4c652a52")},
+  {id:17, name:"Nutella Brownie", cat:"Brownies", price:169, veg:true, eggless:true,
+   desc:"Fudgy brownie swirled with Nutella and finished with a glossy hazelnut-chocolate top layer.",
+   img:U("photo-1589375890993-7b7b8c5c1d0a")},
+
+  // Cookies & Bakes
+  {id:18, name:"Chocolate Chip Cookies", cat:"Cookies & Bakes", price:199, veg:true, eggless:true, unit:"box of 6",
+   desc:"Chewy brown-butter cookies loaded with dark chocolate chunks — crisp at the edges, soft in the middle.",
+   img:U("photo-1499636136210-6f4ee915583e")},
+  {id:19, name:"French Macarons", cat:"Cookies & Bakes", price:349, veg:true, eggless:false, unit:"box of 6",
+   desc:"Delicate almond meringue shells with silky ganache and fruit fillings in assorted flavours — rose, pistachio, salted caramel and more.",
+   img:U("photo-1569864358642-9d1684040f43")},
+  {id:20, name:"Vanilla Buttercream Cupcakes", cat:"Cookies & Bakes", price:249, veg:true, eggless:true, unit:"box of 4",
+   desc:"Soft vanilla sponge cupcakes with piped swirls of smooth buttercream frosting — perfect for gifting.",
+   img:U("photo-1614707267537-b85aaf00c4b7")},
+  {id:21, name:"Glazed Donuts", cat:"Cookies & Bakes", price:179, veg:true, eggless:true, unit:"box of 4",
+   desc:"Pillowy yeast-raised donuts dipped in classic glaze, chocolate and strawberry icing with sprinkles.",
+   img:U("photo-1551024601-bec78aea704b")},
+  {id:22, name:"Blueberry Muffins", cat:"Cookies & Bakes", price:159, veg:true, eggless:true, unit:"box of 2",
+   desc:"Bakery-style domed muffins bursting with fresh blueberries and finished with a crunchy sugar top.",
+   img:U("photo-1607958996333-41aef7caefaa")},
+];
+const CATS = ["All","Cheesecake Pastries","Cakes","Pastries","Brownies","Cookies & Bakes"];
+
+/* ---------- IMAGE FALLBACK (elegant branded placeholder with product name) ---------- */
+function placeholder(name){
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='680'>
+    <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#fbe7d6'/><stop offset='1' stop-color='#f6c9b8'/></linearGradient></defs>
+    <rect width='800' height='680' fill='url(#g)'/>
+    <circle cx='400' cy='300' r='150' fill='#fff' opacity='.55'/>
+    <circle cx='400' cy='300' r='105' fill='#e9a879' opacity='.55'/>
+    <text x='400' y='515' text-anchor='middle' font-family='Georgia,serif' font-size='40' font-weight='600' fill='#3b2418'>${name.replace(/&/g,'&amp;')}</text>
+    <text x='400' y='555' text-anchor='middle' font-family='Arial,sans-serif' font-size='16' letter-spacing='4' fill='#8a6f60'>THE BAKEHOUSE · AKOLA</text>
+  </svg>`;
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+function bindFallback(img,name){
+  img.addEventListener("error",()=>{ if(!img.dataset.fb){img.dataset.fb=1; img.src=placeholder(name);} },{once:false});
+}
+document.querySelectorAll("img[data-name]").forEach(i=>bindFallback(i,i.dataset.name));
+
+/* ---------- STATE ---------- */
+let activeCat="All", query="", cart={}, modalItem=null, modalQty=1;
+const fmt = n=>"₹"+n.toLocaleString("en-IN");
+const $ = s=>document.querySelector(s);
+
+/* ---------- FILTERS ---------- */
+const filtersEl=$("#filters");
+CATS.forEach(c=>{
+  const b=document.createElement("button");
+  b.className="chip"+(c==="All"?" active":""); b.textContent=c; b.setAttribute("role","tab");
+  b.onclick=()=>{activeCat=c; document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.textContent===c)); render();};
+  filtersEl.appendChild(b);
+});
+$("#search").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase(); render();});
+document.querySelectorAll("[data-cat]").forEach(a=>a.addEventListener("click",()=>{
+  const c=a.dataset.cat; activeCat=c;
+  document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.textContent===c)); render();
+}));
+
+/* ---------- RENDER GRID ---------- */
+const grid=$("#grid");
+function render(){
+  const items=MENU.filter(m=>(activeCat==="All"||m.cat===activeCat)&&(!query||(m.name+" "+m.cat+" "+m.desc).toLowerCase().includes(query)));
+  grid.innerHTML="";
+  if(!items.length){grid.innerHTML=`<div class="empty"><h3>No treats found</h3><p>Try a different search — or message us on WhatsApp for custom requests.</p></div>`;return;}
+  items.forEach((m,i)=>{
+    const card=document.createElement("article");
+    card.className="card"; card.style.animationDelay=(i*40)+"ms";
+    card.innerHTML=`
+      <div class="card-img" data-open="${m.id}" role="button" tabindex="0" aria-label="View ${m.name}">
+        <img loading="lazy" alt="${m.name}" src="${m.img}">
+        ${m.veg?`<span class="badge"><span class="dot"></span>Veg</span>`:""}
+        ${m.tag?`<span class="tag">${m.tag}</span>`:""}
+        <span class="quick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">${m.cat}</div>
+        <h3 data-open="${m.id}">${m.name}</h3>
+        <p>${m.desc}</p>
+        <div class="card-foot">
+          <div class="price">${fmt(m.price)}${m.unit?`<small>${m.unit}</small>`:""}</div>
+          <button class="add" data-add="${m.id}" aria-label="Add ${m.name} to order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg><span>Add to Order</span></button>
+        </div>
+      </div>`;
+    bindFallback(card.querySelector("img"),m.name);
+    grid.appendChild(card);
+  });
+}
+grid.addEventListener("click",e=>{
+  const open=e.target.closest("[data-open]"); const add=e.target.closest("[data-add]");
+  if(add){addToCart(+add.dataset.add,1);return;}
+  if(open){openModal(+open.dataset.open);}
+});
+grid.addEventListener("keydown",e=>{ if(e.key==="Enter"&&e.target.dataset.open) openModal(+e.target.dataset.open); });
+render();
+
+/* ---------- CART ---------- */
+function addToCart(id,qty){
+  cart[id]=(cart[id]||0)+qty;
+  updateCart(); toast(`${MENU.find(m=>m.id===id).name} added to your order`);
+}
+function updateCart(){
+  const ids=Object.keys(cart); const count=ids.reduce((a,k)=>a+cart[k],0);
+  $("#cartCount").textContent=count; $("#cartFab").classList.toggle("show",count>0);
+  const body=$("#drawerBody"); body.innerHTML="";
+  let total=0;
+  if(!ids.length){body.innerHTML=`<div class="drawer-empty"><h4>Your order is empty</h4><p>Add a few treats from the menu to get started.</p></div>`;}
+  ids.forEach(k=>{
+    const m=MENU.find(x=>x.id===+k); total+=m.price*cart[k];
+    const row=document.createElement("div"); row.className="line";
+    row.innerHTML=`<img src="${m.img}" alt="${m.name}"><div><b>${m.name}</b><small>${fmt(m.price)}${m.unit?" · "+m.unit:""}</small><div class="qty" style="margin-top:6px"><button data-q="-1" aria-label="Decrease">−</button><span>${cart[k]}</span><button data-q="1" aria-label="Increase">+</button></div></div><button class="rm" aria-label="Remove ${m.name}">Remove</button>`;
+    bindFallback(row.querySelector("img"),m.name);
+    row.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{cart[k]+= +b.dataset.q; if(cart[k]<=0)delete cart[k]; updateCart();});
+    row.querySelector(".rm").onclick=()=>{delete cart[k]; updateCart();};
+    body.appendChild(row);
+  });
+  $("#total").textContent=fmt(total);
+  $("#checkout").disabled=!ids.length; $("#checkout").style.opacity=ids.length?1:.5;
+}
+function openDrawer(){$("#drawer").classList.add("open");$("#overlay").classList.add("open");$("#drawer").setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}
+function closeAll(){["#drawer","#overlay","#modal"].forEach(s=>$(s).classList.remove("open"));$("#drawer").setAttribute("aria-hidden","true");$("#modal").setAttribute("aria-hidden","true");document.body.style.overflow="";}
+$("#cartFab").onclick=openDrawer; $("#drawerClose").onclick=closeAll; $("#overlay").onclick=closeAll; $("#modalClose").onclick=closeAll;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeAll();});
+
+$("#checkout").onclick=()=>{
+  const ids=Object.keys(cart); if(!ids.length) return;
+  let msg=`Hello ${BRAND}! 👋 I'd like to place an order:\n\n`;
+  let total=0;
+  ids.forEach((k,i)=>{const m=MENU.find(x=>x.id===+k); total+=m.price*cart[k]; msg+=`${i+1}. ${m.name}${m.unit?" ("+m.unit+")":""} × ${cart[k]} — ${fmt(m.price*cart[k])}\n`;});
+  msg+=`\nEstimated total: ${fmt(total)}\n\nPlease confirm availability and pickup/delivery time. Thank you!`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
+};
+
+/* ---------- MODAL ---------- */
+function openModal(id){
+  modalItem=MENU.find(m=>m.id===id); modalQty=1; $("#qVal").textContent=1;
+  const img=$("#mImg"); img.dataset.fb=""; img.src=modalItem.img; img.alt=modalItem.name; bindFallback(img,modalItem.name);
+  $("#mCat").textContent=modalItem.cat; $("#mTitle").textContent=modalItem.name;
+  $("#mPrice").innerHTML=fmt(modalItem.price)+(modalItem.unit?`<small style="display:inline;margin-left:8px">per ${modalItem.unit}</small>`:"");
+  $("#mDesc").textContent=modalItem.desc;
+  $("#mLabels").innerHTML=(modalItem.veg?`<span class="lbl veg"><span class="badge" style="position:static;padding:0;background:none"><span class="dot"></span></span>Vegetarian</span>`:"")+(modalItem.eggless?`<span class="lbl egg">Eggless</span>`:`<span class="lbl">Contains Egg</span>`)+`<span class="lbl">Freshly Baked</span>`;
+  $("#mAdd").textContent=`Add to Order · ${fmt(modalItem.price)}`;
+  $("#modal").classList.add("open");$("#overlay").classList.add("open");$("#modal").setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+  $("#modalClose").focus();
+}
+$("#qMinus").onclick=()=>{modalQty=Math.max(1,modalQty-1); syncQty();};
+$("#qPlus").onclick=()=>{modalQty=Math.min(20,modalQty+1); syncQty();};
+function syncQty(){$("#qVal").textContent=modalQty; $("#mAdd").textContent=`Add to Order · ${fmt(modalItem.price*modalQty)}`;}
+$("#mAdd").onclick=()=>{addToCart(modalItem.id,modalQty); closeAll(); setTimeout(openDrawer,250);};
+
+/* ---------- TOAST ---------- */
+let toastT;
+function toast(t){$("#toastText").textContent=t; $("#toast").classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>$("#toast").classList.remove("show"),2400);}
+
+/* ---------- WHATSAPP LINKS ---------- */
+const genericMsg=encodeURIComponent(`Hello ${BRAND}! I'd like to place an order. Could you share today's availability?`);
+document.querySelectorAll(".wa-link").forEach(a=>a.href=`https://wa.me/${WA_NUMBER}?text=${genericMsg}`);
+$("#reviewLink").href="https://www.google.com/maps/search/?api=1&query=The+Bakehouse+Bakery+Akola+Maharashtra";
+
+/* ---------- NAV ---------- */
+const header=$("#header");
+const burger=$("#burger"), mob=$("#mobileMenu");
+burger.onclick=()=>{mob.classList.add("open");burger.setAttribute("aria-expanded","true");document.body.style.overflow="hidden";};
+$("#mobClose").onclick=()=>{mob.classList.remove("open");burger.setAttribute("aria-expanded","false");document.body.style.overflow="";};
+mob.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mob.classList.remove("open");document.body.style.overflow="";}));
+window.addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>10),{passive:true});
+
+/* Active link on scroll */
+const sections=[...document.querySelectorAll("main section[id], #home")];
+const navA=[...document.querySelectorAll(".nav-links a")];
+const spy=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navA.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id));}});},{rootMargin:"-45% 0px -50% 0px"});
+sections.forEach(s=>spy.observe(s));
+
+/* Reveal */
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>ro.observe(el));
+
+$("#year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
